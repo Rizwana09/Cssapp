@@ -1,0 +1,105 @@
+@import "../../../reuse";
+
+.table {
+  overflow-x: scroll;
+  min-height: 50vh;
+}
+
+:host ::ng-deep table {
+  font-family: sans-serif;
+  & > tbody  {
+    & tr {
+      border-bottom: 1px solid $color-ddd;
+    }
+    & td {
+      font-size: 11px;
+      vertical-align: middle;
+      border: none !important;
+    }
+    & th {
+      vertical-align: middle;
+      border: none !important;
+    }
+    & tr:nth-child(even) {
+    background-color: $color-f9f9f9
+    }
+    & tr:nth-child(odd) {
+      background-color: $color-white
+      }
+      & tr:nth-child(even):hover {
+        background-color: $color-f9f9f9
+        }
+        & tr:nth-child(odd):hover {
+          background-color: $color-f9f9f9
+          }
+  }
+}
+
+
+.mat-header-cell, .mat-cell {
+  white-space:nowrap;
+  padding: 0px 10px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  border: 1px solid #0000001a !important;
+  text-align: center;
+}
+
+
+.table th {
+  font-size: 11px;
+  background-color: $color-orange;
+  color: $color-white;
+}
+
+.table tr {
+  height: 25px !important;
+  cursor: pointer;
+}
+
+:host ::ng-deep .filter {
+  & .mat-form-field-wrapper {
+      padding-bottom: 0em !important;
+  }
+  & .mat-form-field-underline {
+    bottom: 0.1em;
+  }
+  & .mat-form-field-infix {
+    border: none;
+  }
+}
+
+.mat-form-field {
+  margin: 0px;
+  text-align: center;
+}
+
+.dropdown--width {
+  width: 20rem;
+}
+
+.mat--icon {
+    font-size: 17px;
+    color: #337ab7;
+  }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+::ng-deep mat-checkbox {
+ & .mat-checkbox-layout {
+    margin-bottom: 0rem;
+  }
+}

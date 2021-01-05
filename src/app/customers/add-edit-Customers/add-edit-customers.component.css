@@ -1,0 +1,45 @@
+span{
+    font-weight: bold;
+    color: blue;
+    font-size: 20px;
+}
+
+  .close-icon {
+    cursor: pointer;
+    float: right;
+  }
+
+  /* .dialogMainContainer{
+    width:500px;
+    height: 250px;
+  } */
+
+  .authorize-dialog-container{
+    max-width: 50em !important;
+    max-height: 250px;
+    display:none;
+}
+
+.customer__parent {
+  margin: 3%;
+}
+
+.d--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.d-flex-end {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8%;
+}
+
+.d-flex-end button:first-child {
+  margin-right: 5px;
+}
+
+mat-form-field {
+  margin: 5px;
+  flex: 0 0 30%;
+}

@@ -1,0 +1,45 @@
+<div class="customer__parent">
+
+  <div class="candidate-dialogtitle">
+    <span>{{ routeType.id === 'add' ? 'Add Customer ' : 'Edit Customer' }}</span>
+  </div>
+
+  <form [formGroup]="customerModel" autocomplete="off">
+
+
+    <mat-card-content class="pt-5 p-2 m-0">
+
+      <div class="d--flex">
+
+        <mat-form-field>
+          <input matInput type="number" class="form-control" formControlName="userId" placeholder="User ID" />
+          <mat-error>You must enter User Id</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <input matInput type="text" class="form-control" formControlName="title" placeholder="title" />
+          <mat-error>You must enter title</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" class="form-control" formControlName="body" placeholder="body" />
+          <mat-error>You must enter body</mat-error>
+        </mat-form-field>
+
+
+
+      </div>
+
+    </mat-card-content>
+
+  </form>
+
+  <div class="form-element d-flex-end">
+    <button mat-raised-button class="uppercase" (click)="cancel()"> Cancel </button>
+    <button mat-raised-button type="submit" style="color:blue" class="mat-button contained-button" (click)="save()">
+      Save Updates
+    </button>
+  </div>
+
+</div>

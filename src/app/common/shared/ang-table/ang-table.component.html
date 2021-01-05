@@ -1,0 +1,34 @@
+<div class="prodheading space">{{ title }}
+    <mat-icon class="addbtn" (click)="onAdd()">add_circle</mat-icon>
+</div>
+
+<div fxFlex="row" fxLayoutAlign="space-between center">
+    <span fxFlex="60%" fxLayoutAlign="start">
+        <mat-form-field>
+            <mat-icon matSuffix id="searchInput">search</mat-icon>
+            <input matInput autocomplete="off" [(ngModel)]="commonService.filterValue" width="80%" fxFlex.sm="65" (input)="newApplyFilter($event.target.value)"
+                placeholder="Enter your Search" #input>
+        </mat-form-field>
+    </span>
+</div>
+
+<div>
+    <table mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>{{disCol}}</mat-header-cell>
+            <div *ngIf="disCol === 'action'; else elements">
+                <mat-cell *matCellDef="let element " class="edit__delete__class"> 
+                    <span class="text-as-link" (click)="onEdit(element, colIndex)"> Edit </span> | 
+                    <span class="text-as-link" (click)="onDelete(element, colIndex)"> Delete </span> </mat-cell>
+            </div>
+            <ng-template #elements>
+                <mat-cell *matCellDef="let element "> {{element[disCol]}} </mat-cell>
+            </ng-template>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+    <mat-paginator *ngIf="paginatorProps" [pageIndex]="commonService.pageIndex" [pageSize]="paginatorProps.pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="getServerData($event)"
+    >
+    </mat-paginator>
+</div>

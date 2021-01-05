@@ -1,0 +1,47 @@
+table {
+    width: 80%;
+    margin: 10px 10%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 80%;
+    margin: 0px 10%;
+  }
+
+  .prodheading{
+    margin-left: 10%;
+    margin-right: 10%;
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .space{
+    margin-top: 20px;
+  }
+
+  .addbtn{
+    margin-left:10%;
+    color: blue;
+    float:right;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .mat-paginator{
+    margin-right:10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+ 
+  .text-as-link{
+    color: blue;
+    text-decoration: none;
+    font-family: 'Avenir-Book', sans-serif;
+    cursor: pointer;
+  }
+  .action-link{
+    cursor: pointer;
+    color: blue;
+  }

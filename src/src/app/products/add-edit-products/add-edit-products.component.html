@@ -1,0 +1,119 @@
+<div
+  mat-dialog-title
+  disableTypography
+  fxLayout="row"
+  fxLayoutAlign="space-between"
+  fxLayoutGap="20px"
+  fxLayoutGap.xs="0em"
+>
+  <div class="candidate-dialogtitle">
+    <span>{{ data.isCustomer ? "Add Product " : "Edit Product" }}</span>
+    <a class="close-icon" id="close_icon" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </a>
+  </div>
+</div>
+
+<div>
+  <form
+    fxLayout="column"
+    class="middle-section form-group"
+    [formGroup]="editProduct"
+    novalidate
+  >
+    <div class="form-group middle-section">
+      <div
+        class="input-row"
+        fxLayout="row"
+        fxLayoutAlign="space-between"
+        fxLayoutGap="2em"
+        fxLayout.xs="column"
+        fxLayoutGap.xs="0em"
+      >
+        <div
+          fxFlex="50%"
+          fxLayoutAlign="start"
+          fxLayout.xs="column"
+          fxFlex.xs="100%"
+        >
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Product Name"
+              formControlName="productname"
+            />
+            <mat-error>You must enter product name</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxLayout.xs="column" fxFlex.xs="100%">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Price"
+              formControlName="price"
+            />
+            <mat-error>You must enter price</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div
+      class="input-row"
+      fxLayout="row"
+      fxLayoutAlign="space-between"
+      fxLayoutGap="1em"
+      fxLayout.xs="column"
+      fxLayoutGap.xs="0em"
+    >
+      <div class="middle-section">
+        <div fxFlex="50%" fxLayout.xs="column" fxFlex.xs="100%">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Product ID"
+              formControlName="productid"
+            />
+            <mat-error>You must enter Product_ID</mat-error>
+          </mat-form-field>
+        </div>
+        <div
+          fxFlex="50%"
+          fxLayout="column-reverse"
+          fxLayoutALign="space-between"
+          fxLayoutGap="1em"
+          fxFlex.xs="100%"
+        >
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Quantity "
+              formControlName="quantity"
+            />
+            <mat-hint align="end" class="hint"
+              >Quanity # required to maintain</mat-hint
+            >
+            <mat-error>You must enter quantity</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+      <div class="statusBtn">
+        <button class="uppercase" mat-button (click)="close()">Cancel</button>
+        <button
+          type="submit"
+          style="color: blue"
+          mat-button
+          class="mat-button contained-button"
+          (click)="save()"
+        >
+          Save Updates
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
